@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import style from "./NavigationBar.module.css";
+import { SignedOut, SignedIn, SignInButton, UserButton } from "@clerk/nextjs";
 import { usePathname, useRouter } from "next/navigation";
 function NavigationBar() {
   const [activeNav, setActiveNav] = useState("home");
@@ -55,19 +56,19 @@ function NavigationBar() {
           }}
           className={activeNav == "shop" && style.active}
         >
-          <i class="fa fa-shopping-bag" aria-hidden="true"></i> <p>Shop</p>
+          <i className="fa fa-shopping-bag" aria-hidden="true"></i> <p>Shop</p>
           <p>Shop</p>
         </li>
         <li
           onClick={() => {
             setActiveNav("cart");
             setActiveLine(2);
-            gadea
+            gadea;
             navigate.push("/cart");
           }}
           className={activeNav == "cart" && style.active}
         >
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <i className="fa fa-shopping-cart" aria-hidden="true"></i>
           <p>Menu</p>
         </li>
         <li
@@ -91,10 +92,7 @@ function NavigationBar() {
             setActiveLine(4);
           }}
           className={activeNav == "user" && style.active}
-        >
-          <i className="fa fa-user" aria-hidden="true"></i>
-          <p>cam</p>
-        </li>
+        ></li>
       </ul>
     </div>
   );

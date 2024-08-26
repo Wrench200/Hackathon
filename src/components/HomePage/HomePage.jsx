@@ -1,6 +1,8 @@
 import React from "react";
 import style from "./HomePage.module.css";
 import Image from "next/image";
+import { SignedOut, SignedIn, SignInButton,UserButton } from "@clerk/nextjs";
+
 
 function HomePage() {
   const discounts = [
@@ -34,14 +36,12 @@ function HomePage() {
               <path className="line" d="M7 16 27 16"></path>
             </svg>
           </label>
-          <div className={style.account}>
-            <Image
-              alt="image"
-              src={"/blank-profile-picture-973460_640.png"}
-              width={3000}
-              height={3000}
-            />
-          </div>
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
         <div className={style.bot}>
           <h1>Welcome Jane ,</h1>
