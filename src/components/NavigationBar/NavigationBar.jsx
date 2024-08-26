@@ -56,32 +56,31 @@ function NavigationBar() {
           className={activeNav == "shop" && style.active}
         >
           <i class="fa fa-shopping-bag" aria-hidden="true"></i> <p>Shop</p>
-=======
-          <i className="fa fa-shopping-cart" aria-hidden="true"></i>
           <p>Shop</p>
         </li>
         <li
           onClick={() => {
             setActiveNav("cart");
             setActiveLine(2);
+            gadea
             navigate.push("/cart");
           }}
           className={activeNav == "cart" && style.active}
         >
-          <i className="fas fa-utensils    "></i>
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
           <p>Menu</p>
         </li>
         <li
-          title="hotel"
+          title="favorite"
           onClick={() => {
-            setActiveNav("hotel");
+            setActiveNav("favorite");
             setActiveLine(3);
             navigate.push("/hotels");
           }}
-          className={activeNav == "hotel" && style.active}
+          className={activeNav == "favorite" && style.active}
         >
-          <i className="fas fa-hotel    "></i>
-          <p>Hotel</p>
+          <i className="fa fa-heart   "></i>
+          <p>favorite</p>
         </li>
         <li
           title="account"
