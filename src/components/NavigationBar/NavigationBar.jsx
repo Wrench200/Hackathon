@@ -17,10 +17,10 @@ function NavigationBar() {
       case "/shop":
         setActiveLine(1);
         break;
-      case "":
+      case "/order":
         setActiveLine(2);
         break;
-      case "/hotels":
+      case "/favorite":
         setActiveLine(3);
         break;
       case "/dashboard":
@@ -61,13 +61,13 @@ function NavigationBar() {
         </li>
         <li
           onClick={() => {
-            setActiveNav("cart");
+            setActiveNav("order");
             setActiveLine(2);
-            navigate.push("/cart");
+            navigate.push("/order");
           }}
-          className={activeNav == "cart" && style.active}
+          className={activeNav == "order" && style.active}
         >
-          <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+          <i class="fa fa-tag" aria-hidden="true"></i>
           <p>Menu</p>
         </li>
         <li
@@ -75,7 +75,7 @@ function NavigationBar() {
           onClick={() => {
             setActiveNav("favorite");
             setActiveLine(3);
-            navigate.push("/hotels");
+            navigate.push("/favorite");
           }}
           className={activeNav == "favorite" && style.active}
         >
