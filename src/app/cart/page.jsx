@@ -3,7 +3,7 @@ import NavigationBar from "@/components/NavigationBar/NavigationBar";
 import React, { useState } from "react";
 import style from "./page.module.css";
 import Image from "next/image";
-function page() {
+function Page() {
   const products = [
     {
       name: "product",
@@ -56,7 +56,7 @@ function page() {
       <div className={style.products}>
         <div className={style.product}>
           {products.map((item) => (
-            <div className={style.line}>
+            <div key={item.name} className={style.line}>
               <div className={style.left}>
                 <Image alt="image" src={item.image} width={300} height={300} />
               </div>
@@ -94,4 +94,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

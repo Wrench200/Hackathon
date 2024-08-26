@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import style from "./page.module.css";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-function page() {
+function Page() {
   const navigate = useRouter();
   const [activePage, setActivePage] = useState("ongoing");
   return (
@@ -68,4 +68,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
