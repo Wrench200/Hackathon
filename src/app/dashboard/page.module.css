@@ -1,14 +1,103 @@
-.dashboard{
+.dashboard {
   padding: 1em;
   overflow-y: scroll;
 }
-.dashboard::-webkit-scrollbar{
+.dashboard::-webkit-scrollbar {
   display: none;
 }
 
-.top{
+.top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1em 0;
+  padding-bottom: 0;
+}
+.top i {
+  font-size: 21px;
+}
+.logo img {
+  width: 50%;
+  height: 10%;
+  object-fit: cover;
+}
+.logo {
+  width: 50%;
+}
+.topInfo {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  background-color: white;
+  padding: 1em;
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.13);
+  border-radius: 5px;
+}
+
+.topInfo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image {
+  width: 15%;
+}
+.profileInfo li {
+  display: flex;
+  padding: 0.5em 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+}
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.left i {
+  width: 3em;
+  height: 3em;
+  display: grid;
+  border-radius: 10px;
+  place-content: center;
+  background-color: #eee;
+}
+.left p {
+  font-weight: 600;
+}
+.profileInfo ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.profileInfo {
+  padding: 1em;
+  border: 1px solid #d3d5db;
+  border-radius: 10px;
+}
+
+.dashboard {
+  height: 100vh;
+  margin-bottom: 7em;
+}
+.dashboard button {
+  padding: 1em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: inherit;
+  margin: 1em 0;
+  font-weight: 700;
 }

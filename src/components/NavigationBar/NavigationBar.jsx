@@ -62,7 +62,7 @@ function NavigationBar() {
           onClick={() => {
             setActiveNav("cart");
             setActiveLine(2);
-            gadea
+            
             navigate.push("/cart");
           }}
           className={activeNav == "cart" && style.active}

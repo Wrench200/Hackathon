@@ -22,8 +22,17 @@
 }
 .top {
   display: flex;
-
+  align-items: center;
   justify-content: space-between;
+}
+
+.logo img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+.logo {
+  width: 50%;
 }
 .account {
   width: 3em;

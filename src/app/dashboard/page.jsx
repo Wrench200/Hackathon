@@ -7,7 +7,14 @@ function page() {
   return (
     <section className={style.dashboard}>
       <div className={style.top}>
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        <div className={style.logo}>
+          <Image
+            src="/hackathon-logo.png"
+            alt="Logo"
+            width={200}
+            height={200}
+          />
+        </div>
         <i class="fas fa-gear  "></i>
       </div>
       <div className={style.info}>
