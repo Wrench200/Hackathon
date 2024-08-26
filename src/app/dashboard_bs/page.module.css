@@ -180,3 +180,16 @@
   align-items: center;
   gap: 0.5em;
 }
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+.formGroup input[type="text"],
+.formGroup input[type="text"],
+.formGroup textarea,
+.formGroup input[type="number"] {
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: 6px;
+  outline: none;
+}

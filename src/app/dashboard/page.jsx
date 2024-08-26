@@ -4,7 +4,8 @@ import Image from "next/image";
 import style from "./page.module.css";
 import React from "react";
 import { currentUser } from "@clerk/nextjs/server";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 import {
   SignedIn,
   SignedOut,
@@ -14,8 +15,8 @@ import {
   RedirectToUserProfile,
 
 } from "@clerk/nextjs";
-
-  
+function page() {
+  const navigate = useRouter();
   async function page() {
     const user = await currentUser();
     return (
@@ -77,6 +78,39 @@ import {
               </ul>
             </div>
           </div>
+          <div className={style.profileInfo}>
+            <ul>
+              <li>
+                <div className={style.left}>
+                  <i className="fa fa-user" aria-hidden="true"></i>
+                  <p>Personal Details</p>
+                </div>
+                <i className="fa fa-chevron-right" aria-hidden="true"></i>
+              </li>
+
+              <li>
+                <div className={style.left}>
+                  <i className="fa fa-heart" aria-hidden="true"></i>
+                  <p>My Favorites</p>
+                </div>
+                <i className="fa fa-chevron-right" aria-hidden="true"></i>
+              </li>
+              <li onClick={() => navigate.push("/dashboard_bs")}>
+                <div className={style.left}>
+                  <i class="fas fa-dollar-sign    "></i>
+                  <p>Become a seller</p>
+                </div>
+                <i className="fa fa-chevron-right" aria-hidden="true"></i>
+              </li>
+              <li>
+                <div className={style.left}>
+                  <i className="fas fa-gear"></i>
+                  <p>Settings</p>
+                </div>
+                <i className="fa fa-chevron-right" aria-hidden="true"></i>
+              </li>
+            </ul>
+          </div>
           <SignOutButton>
             <button>
               <i className="fa fa-sign-out" aria-hidden="true"></i>
@@ -111,6 +145,7 @@ import {
         <NavigationBar />
       </section>
     );
+  }
 }
 
 export default page;
