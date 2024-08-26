@@ -1,4 +1,3 @@
-
 import React from "react";
 import style from "./page.module.css";
 function page() {
@@ -10,28 +9,28 @@ function page() {
         <p>Create an account</p>
       </div>
       <form className={style.form}>
-        <div class={style.group}>
-          <input required type="text" class={style.input} />
-          <span class={style.highlight}></span>
-          {/* <span class={style.bar}></span> */}
+        <div className={style.group}>
+          <input required type="text" className={style.input} />
+          <span className={style.highlight}></span>
+          {/* <span className={style.bar}></span> */}
           <label className={style.label}>Username</label>
         </div>
-        <div class={style.group}>
-          <input required type="text" class={style.input} />
-          <span class={style.highlight}></span>
-          {/* <span class={style.bar}></span> */}
+        <div className={style.group}>
+          <input required type="text" className={style.input} />
+          <span className={style.highlight}></span>
+          {/* <span className={style.bar}></span> */}
           <label className={style.label}>Email</label>
         </div>
-        <div class={style.group}>
-          <input required type="text" class={style.input} />
-          <span class={style.highlight}></span>
-          {/* <span class={style.bar}></span> */}
+        <div className={style.group}>
+          <input required type="text" className={style.input} />
+          <span className={style.highlight}></span>
+          {/* <span className={style.bar}></span> */}
           <label className={style.label}>Password</label>
         </div>
-        <div class={style.group}>
-          <input required type="text" class={style.input} />
-          <span class={style.highlight}></span>
-          {/* <span class={style.bar}></span> */}
+        <div className={style.group}>
+          <input required type="text" className={style.input} />
+          <span className={style.highlight}></span>
+          {/* <span className={style.bar}></span> */}
           <label className={style.label}>Confirm Password</label>
         </div>
       </form>

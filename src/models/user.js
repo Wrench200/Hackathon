@@ -41,7 +41,7 @@ const userSchema = {
       {
         type: Schema.Types.ObjectId,
         required: false,
-        ref: "products",
+        ref: "Products",
       },
     ],
   };

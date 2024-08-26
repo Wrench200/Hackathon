@@ -1,5 +1,5 @@
 import dbConnect from "@/utils/dbConnect";
-import product from "@/models/product";
+import Product from "@/models/product";
 import { NextResponse } from "next/server";
 
 export const post = async (req) => {
@@ -7,7 +7,7 @@ export const post = async (req) => {
     const { id } = req.json();
     await dbConnect();
     if (id) {
-      const products = await product.find({author: id});
+      const products = await Product.find({author: id});
       if (!product) {
         return new NextResponse(
           JSON.stringify({ message: "Product not found" }),
