@@ -20,11 +20,11 @@ export const POST = async (req) => {
       });
     }
 
-    const { name, description, author, price, image, discount, percentage } =
+    const { name, description, price, image, discount, percentage } =
       await req.json();
 
     // Validate the required fields
-    if (!name || !description || !price || !image) {
+    if (!name || !description || !price || !image ) {
       return new NextResponse(
         JSON.stringify({ message: "Missing required fields" }),
         {
@@ -50,8 +50,10 @@ export const POST = async (req) => {
     const uploadResult = await cloudinary.uploader.upload(image, {
       public_id: name,
     });
-
+    const author = userId;
     // Create a new product
+    console.log("image", uploadResult.secure_url);
+    
     const newProduct = new Product({
       name,
       description,
@@ -59,7 +61,7 @@ export const POST = async (req) => {
       price,
       discount,
       percentage,
-      image: uploadResult.secure_url,
+      image: uploadResult.secure_url
     });
 
     await newProduct.save();

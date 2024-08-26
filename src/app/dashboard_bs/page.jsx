@@ -1,20 +1,21 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import React, { useState } from "react";
 import style from "./page.module.css";
 import Image from "next/image";
 import { toast } from "sonner";
-function Page() {
 import { PHASE_PRODUCTION_SERVER } from "next/dist/shared/lib/constants";
 import { SignedIn, UserButton } from "@clerk/nextjs";
 function page() {
   const [showMenu, setShowMenu] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [activePage, setActivePage] = useState("all");
   const [productName, setProductName] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState();
   const [image, setImage] = useState(null);
   const [discount, setDiscount] = useState(false);
-  const [discountPercentage, setDiscountPercentage] = useState(0);
+  const [percentage, setpercentage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleImageUpload = (e) => {
@@ -35,7 +36,7 @@ function page() {
       price,
       image,
       discount,
-      discountPercentage,
+      percentage,
     };
 
     try {
@@ -127,6 +128,7 @@ function page() {
           </div>
         </div>
       </div>
+      </div>
       <div className={style.top}>
         <label
           className="hamburger"
@@ -149,6 +151,7 @@ function page() {
           </SignedIn>
         </div>
       </div>
+      
       {activePage === "all" && (
         <div className={style.products}>
           <h1>Lastly Updated Products</h1>
@@ -211,20 +214,18 @@ function page() {
                   type="range"
                   min="0"
                   max="100"
-                  value={discountPercentage}
+                  value={percentage}
                   onChange={(e) =>
-                    setDiscountPercentage(Number(e.target.value))
+                    setpercentage(Number(e.target.value))
                   }
                 />
-                <span>{discountPercentage}%</span>
+                <span>{percentage}%</span>
               </div>
             )}
             <button type="submit" disabled={isLoading}>
               {isLoading ? "Adding..." : "Add Product"}
             </button>
           </form>
-          <h1>Add Product</h1>
-          
         </>
       )}
       {activePage === "orders" && (
@@ -236,4 +237,4 @@ function page() {
   );
 }
 
-export default Page;
+export default page;
