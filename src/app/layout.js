@@ -1,5 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import AuthContext from "@/Context/AuthContext";
+import { Toaster } from "sonner";
+
 import { ClerkProvider } from '@clerk/nextjs'
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +16,11 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
 
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <AuthContext>
+          <Toaster position="top right" richColors/>
+          {children}</AuthContext>
+      </body>
     </html>
     </ClerkProvider>
   );
