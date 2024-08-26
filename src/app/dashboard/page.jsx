@@ -42,7 +42,6 @@ async function page() {
           </div>
           <div className={style.profileInfo}>
             <ul>
-             
               <li>
                 <div className={style.left}>
                   <i className="fa fa-shopping-bag" aria-hidden="true"></i>
