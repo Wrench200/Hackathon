@@ -1,10 +1,9 @@
-
 import React from "react";
 import style from "./HomePage.module.css";
 import Image from "next/image";
-import { SignedOut, SignedIn, SignInButton,UserButton } from "@clerk/nextjs";
-import { useUser } from '@clerk/nextjs'
-import { currentUser } from '@clerk/nextjs/server'
+import { SignedOut, SignedIn, SignInButton, UserButton } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs/server";
 // Get the user from Clerk when the page loads, and pass it to the component
 
 async function HomePage() {
@@ -25,7 +24,7 @@ async function HomePage() {
       image: "",
     },
   ];
-  const user = await currentUser()
+  const user = await currentUser();
   return (
     <section className={style.home}>
       <div className={style.topNav}>
@@ -39,10 +38,10 @@ async function HomePage() {
             />
           </div>
           <div className={style.account}>
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
            
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </div>
         </div>
         <div className={style.bot}>
@@ -67,7 +66,7 @@ async function HomePage() {
               fill="#000"
               fillRule="evenodd"
               d="M20 5h-1.17a3.001 3.001 0 0 0-5.66 0H4a1 1 0 0 0 0 2h9.17a3.001 3.001 0 0 0 5.66 0H20a1 1 0 1 0 0-2zm-4 2a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM3 12a1 1 0 0 1 1-1h1.17a3.001 3.001 0 0 1 5.66 0H20a1 1 0 1 1 0 2h-9.17a3.001 3.001 0 0 1-5.66 0H4a1 1 0 0 1-1-1zm5 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0 2h9.17a3.001 3.001 0 0 0 5.66 0H20a1 1 0 1 0 0-2h-1.17a3.001 3.001 0 0 0-5.66 0H4zm13 1a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>{" "}
         </div>

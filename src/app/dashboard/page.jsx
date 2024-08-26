@@ -1,11 +1,10 @@
-"use client";
+
 import NavigationBar from "@/components/NavigationBar/NavigationBar";
 import Image from "next/image";
 import style from "./page.module.css";
 import React from "react";
 import { currentUser } from "@clerk/nextjs/server";
-import { useRouter } from "next/navigation";
-
+import Link from "next/link";
 import {
   SignedIn,
   SignedOut,
@@ -13,10 +12,10 @@ import {
   SignInButton,
   SignOutButton,
   RedirectToUserProfile,
-  UserButton,
+
 } from "@clerk/nextjs";
-function page() {
-  const navigate = useRouter();
+
+  
   async function page() {
     const user = await currentUser();
     return (
@@ -50,7 +49,7 @@ function page() {
                 <li>
                   <div className={style.left}>
                     <i className="fa fa-shopping-bag" aria-hidden="true"></i>
-                    <p>My Order</p>
+                    <p>My Orders</p>
                   </div>
                   <i className="fa fa-chevron-right" aria-hidden="true"></i>
                 </li>
@@ -62,10 +61,10 @@ function page() {
                   <i className="fa fa-chevron-right" aria-hidden="true"></i>
                 </li>
                 <li>
-                  <div className={style.left}>
+                  <Link href="/dashboard_bs" className={style.left}>
                     <i class="fas fa-dollar-sign    "></i>
-                    <p>Become a seller</p>
-                  </div>
+                    <p>My Products</p>
+                  </Link>
                   <i className="fa fa-chevron-right" aria-hidden="true"></i>
                 </li>
                 <li>
@@ -77,39 +76,6 @@ function page() {
                 </li>
               </ul>
             </div>
-          </div>
-          <div className={style.profileInfo}>
-            <ul>
-              <li>
-                <div className={style.left}>
-                  <i className="fa fa-user" aria-hidden="true"></i>
-                  <p>Personal Details</p>
-                </div>
-                <i className="fa fa-chevron-right" aria-hidden="true"></i>
-              </li>
-
-              <li>
-                <div className={style.left}>
-                  <i className="fa fa-heart" aria-hidden="true"></i>
-                  <p>My Favorites</p>
-                </div>
-                <i className="fa fa-chevron-right" aria-hidden="true"></i>
-              </li>
-              <li onClick={() => navigate.push("/dashboard_bs")}>
-                <div className={style.left}>
-                  <i class="fas fa-dollar-sign    "></i>
-                  <p>Become a seller</p>
-                </div>
-                <i className="fa fa-chevron-right" aria-hidden="true"></i>
-              </li>
-              <li>
-                <div className={style.left}>
-                  <i className="fas fa-gear"></i>
-                  <p>Settings</p>
-                </div>
-                <i className="fa fa-chevron-right" aria-hidden="true"></i>
-              </li>
-            </ul>
           </div>
           <SignOutButton>
             <button>
@@ -145,7 +111,6 @@ function page() {
         <NavigationBar />
       </section>
     );
-  }
 }
 
 export default page;

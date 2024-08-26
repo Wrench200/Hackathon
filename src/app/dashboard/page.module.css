@@ -41,6 +41,9 @@
 }
 .image {
   width: 15%;
+  height:15%;
+  border-radius: 100%;
+  overflow: hidden;
 }
 .profileInfo li {
   display: flex;

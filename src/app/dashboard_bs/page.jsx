@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import style from "./page.module.css";
 import Image from "next/image";
 import { PHASE_PRODUCTION_SERVER } from "next/dist/shared/lib/constants";
-
+import { SignedIn, UserButton } from "@clerk/nextjs";
 function page() {
   const [showMenu, setShowMenu] = useState(false);
   const [activePage, setActivePage] = useState("all");
@@ -89,9 +89,12 @@ function page() {
               <i class="fa-solid fa-folder-tree"></i> <p>Orders</p>
             </li>
           </ul>
-          <div className={style.back} onClick={() => {
-            navigate.push("")
-          }}>
+          <div
+            className={style.back}
+            onClick={() => {
+              navigate.push("");
+            }}
+          >
             <i class="fa-solid fa-arrow-left"></i>
             <p>Back to Dashboard</p>
           </div>
@@ -114,12 +117,9 @@ function page() {
           </svg>
         </label>
         <div className={style.account}>
-          <Image
-            alt="image"
-            src={"/blank-profile-picture-973460_640.png"}
-            width={3000}
-            height={3000}
-          />
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
       </div>
       {activePage === "all" && (
@@ -161,7 +161,8 @@ function page() {
       )}
       {activePage === "add" && (
         <>
-          <h1>Add Products</h1>
+          <h1>Add Product</h1>
+          
         </>
       )}
 
