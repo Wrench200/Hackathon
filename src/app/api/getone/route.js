@@ -1,19 +1,19 @@
-import dbConnect from "@/utils/dbConnect"
-import product from "@/models/product";
+import dbConnect from "@/utils/dbConnect";
+import Product from "@/models/product";
 import { NextResponse } from "next/server";
 
-export const get = async (req) => {
+export const POST = async (req) => {
   try {
-    const {id} = req.json()
+    const { id } = req.json();
+    console.log(id);
     await dbConnect();
 
-   const products= await product.findById({id});
+    const products = await Product.findById(id);
 
     if (!products) {
-      return new NextResponse(
-        JSON.stringify({ message: "No products" }),
-        { status: 400 }
-      );
+      return new NextResponse(JSON.stringify({ message: "No products" }), {
+        status: 400,
+      });
     }
     console.log(shipment);
     return new NextResponse(

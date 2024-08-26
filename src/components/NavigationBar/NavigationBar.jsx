@@ -44,7 +44,7 @@ function NavigationBar() {
           }}
           className={activeNav == "home" && style.active}
         >
-          <i class="fa fa-home" aria-hidden="true"></i>
+          <i className="fa fa-home" aria-hidden="true"></i>
           <p>Home</p>
         </li>
         <li
@@ -56,6 +56,9 @@ function NavigationBar() {
           className={activeNav == "shop" && style.active}
         >
           <i class="fa fa-shopping-bag" aria-hidden="true"></i> <p>Shop</p>
+=======
+          <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+          <p>Shop</p>
         </li>
         <li
           onClick={() => {
@@ -65,7 +68,7 @@ function NavigationBar() {
           }}
           className={activeNav == "cart" && style.active}
         >
-          <i class="fas fa-utensils    "></i>
+          <i className="fas fa-utensils    "></i>
           <p>Menu</p>
         </li>
         <li
@@ -77,7 +80,7 @@ function NavigationBar() {
           }}
           className={activeNav == "hotel" && style.active}
         >
-          <i class="fas fa-hotel    "></i>
+          <i className="fas fa-hotel    "></i>
           <p>Hotel</p>
         </li>
         <li
@@ -90,7 +93,7 @@ function NavigationBar() {
           }}
           className={activeNav == "user" && style.active}
         >
-          <i class="fa fa-user" aria-hidden="true"></i>
+          <i className="fa fa-user" aria-hidden="true"></i>
           <p>cam</p>
         </li>
       </ul>

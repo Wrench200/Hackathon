@@ -1,13 +1,15 @@
 import dbConnect from "@/utils/dbConnect"
-import product from "@/models/product";
+import Product from "@/models/product";
+import { NextResponse } from "next/server"
 
-export const get = async (req) => {
+export const POST = async (req) => {
   try {
     await dbConnect();
 
-    const title = req.params.query;
-    const products = await product.find({
-      pname: {
+    const {title} = req.json();
+    console.log("title")
+    const products = await Product.find({
+      name: {
         $regex: ".*" + title + ".*",
         $options: "i",
       },

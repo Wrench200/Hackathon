@@ -15,11 +15,11 @@ function Page() {
 
     // Validation
     if (!email) {
-      toast.error("Email is required");
+      toast.error("Please input a valid email ");
       return;
     }
     if (!password) {
-      toast.error("Password is required");
+      toast.error("Please fill in your password ");
       return;
     }
     if (!/\S+@\S+\.\S+/.test(email)) {
@@ -67,7 +67,6 @@ function Page() {
       <form className={style.form} onSubmit={handleSubmit}>
         <div className={style.group}>
           <input
-            required
             type="email"
             className={style.input}
             value={email}
@@ -78,7 +77,6 @@ function Page() {
         </div>
         <div className={style.group}>
           <input
-            required
             type={showPassword ? "text" : "password"}
             className={style.input}
             value={password}

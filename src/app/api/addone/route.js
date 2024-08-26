@@ -1,7 +1,7 @@
 import dbConnect from "@/utils/dbConnect"
-import product from "@/models/product";
+import Product from "@/models/product";
 import { NextResponse } from "next/server";
-export const post = async (req) => {
+export const POST = async (req) => {
 
     // check if user is logged in as artist
 

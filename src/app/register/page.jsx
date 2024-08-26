@@ -9,6 +9,7 @@ function Page() {
   const [showCPassword, setShowCPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [role, setRole] = useState("");
@@ -17,9 +18,19 @@ function Page() {
     e.preventDefault();
     setIsLoading(true);
 
+    if (!username) {
+      setIsLoading(false);
+      return toast.error("please input a username");
+    }
+
+    if (username.length < 3) {
+      setIsLoading(false);
+      return toast.error("Username must be at least 3 characters long.");
+    }
+
     if (!email) {
       setIsLoading(false);
-      return toast.error("Email is required.");
+      return toast.error("please input an email");
     }
 
     if (!/\S+@\S+\.\S+/.test(email)) {
@@ -29,7 +40,7 @@ function Page() {
 
     if (!password) {
       setIsLoading(false);
-      return toast.error("Password is required.");
+      return toast.error("Please input a password");
     }
 
     if (password.length < 6) {
@@ -83,9 +94,17 @@ function Page() {
       <form className={style.form} onSubmit={handleSubmit}>
         <div className={style.group}>
           <input
-            required
+            type="text"
+            className={style.input}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <span className={style.highlight}></span>
+          <label className={style.label}>Username</label>
+        </div>
+        <div className={style.group}>
+          <input
             type="email"
-            autoFocus
             className={style.input}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -95,7 +114,6 @@ function Page() {
         </div>
         <div className={style.group}>
           <input
-            required
             type={showPassword ? "text" : "password"}
             className={style.input}
             value={password}
@@ -111,7 +129,6 @@ function Page() {
         </div>
         <div className={style.group}>
           <input
-            required
             type={showCPassword ? "text" : "password"}
             className={style.input}
             value={confirmPassword}

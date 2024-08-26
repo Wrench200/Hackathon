@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 
-dotenv.config();
+// dotenv.config();
 
 const dbConnect = async () => {
   try {
-    const mongoURI = process.env.MONGO;
+    const mongoURI = "mongodb://127.0.0.1:27017/hackathon";
 
     if (!mongoURI) {
       throw new Error("MONGO environment variable is not set");
