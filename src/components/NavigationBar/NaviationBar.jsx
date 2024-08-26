@@ -1,6 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import style from "./NavigationBar.module.css";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
 function NaviationBar() {
   const [activeNav, setActiveNav] = useState("home");
   const [activeLine, setActiveLine] = useState(null);
@@ -59,8 +66,12 @@ function NaviationBar() {
           }}
           className={activeNav === "user" && style.active}
         >
-          <i className="fa fa-user" aria-hidden="true"></i>
-          <p>cam</p>
+          <SignedOut>
+        <SignInButton />
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
         </li>
       </ul>
     </div>
