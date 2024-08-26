@@ -16,6 +16,8 @@ function page() {
           />
         </div>
         <i class="fas fa-gear  "></i>
+        <i className="fa fa-chevron-left" aria-hidden="true"></i>
+        <i className="fas fa-gear  "></i>
       </div>
       <div className={style.info}>
         <div className={style.topInfo}>
@@ -35,37 +37,37 @@ function page() {
           <ul>
             <li>
               <div className={style.left}>
-                <i class="fa fa-user" aria-hidden="true"></i>
+                <i className="fa fa-user" aria-hidden="true"></i>
                 <p>Personal Details</p>
               </div>
-              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              <i className="fa fa-chevron-right" aria-hidden="true"></i>
             </li>
             <li>
               <div className={style.left}>
-                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i className="fa fa-shopping-bag" aria-hidden="true"></i>
                 <p>My Order</p>
               </div>
-              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              <i className="fa fa-chevron-right" aria-hidden="true"></i>
             </li>
             <li>
               <div className={style.left}>
-                <i class="fa fa-heart" aria-hidden="true"></i>
+                <i className="fa fa-heart" aria-hidden="true"></i>
                 <p>My Favorites</p>
               </div>
-              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              <i className="fa fa-chevron-right" aria-hidden="true"></i>
             </li>
             <li>
               <div className={style.left}>
-                <i class="fas fa-gear"></i>
+                <i className="fas fa-gear"></i>
                 <p>Settings</p>
               </div>
-              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+              <i className="fa fa-chevron-right" aria-hidden="true"></i>
             </li>
           </ul>
         </div>
       </div>
       <button>
-        <i class="fa fa-sign-out" aria-hidden="true"></i>
+        <i className="fa fa-sign-out" aria-hidden="true"></i>
         <p>Logout</p>
       </button>
       <NavigationBar />
