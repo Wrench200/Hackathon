@@ -91,7 +91,9 @@ function NavigationBar() {
             setActiveLine(4);
           }}
           className={activeNav == "user" && style.active}
-        ></li>
+        >
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </li>
       </ul>
     </div>
   );
