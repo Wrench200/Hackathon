@@ -1,9 +1,13 @@
+
 import React from "react";
 import style from "./HomePage.module.css";
 import Image from "next/image";
-import { SignedOut, SignedIn, SignInButton, UserButton } from "@clerk/nextjs";
+import { SignedOut, SignedIn, SignInButton,UserButton } from "@clerk/nextjs";
+import { useUser } from '@clerk/nextjs'
+import { currentUser } from '@clerk/nextjs/server'
+// Get the user from Clerk when the page loads, and pass it to the component
 
-function HomePage() {
+async function HomePage() {
   const discounts = [
     {
       title: "50% Off",
@@ -21,6 +25,7 @@ function HomePage() {
       image: "",
     },
   ];
+  const user = await currentUser()
   return (
     <section className={style.home}>
       <div className={style.topNav}>
@@ -37,13 +42,11 @@ function HomePage() {
             <SignedOut>
               <SignInButton />
             </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
+           
           </div>
         </div>
         <div className={style.bot}>
-          <h1>Welcome Jane ,</h1>
+          <h1>Welcome {user?.firstName}!,</h1>
           <p>Our Cultural app</p>
         </div>
       </div>
