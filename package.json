@@ -13,6 +13,7 @@
     "@fortawesome/fontawesome-free": "^6.6.0",
     "aframe": "^1.6.0",
     "aos": "^2.3.4",
+    "cloudinary": "^2.4.0",
     "dotenv": "^16.4.5",
     "jquery": "^3.7.1",
     "mongoose": "^8.5.4",

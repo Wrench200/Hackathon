@@ -1,10 +1,10 @@
-"use client";
+// "use client";
 import NavigationBar from "@/components/NavigationBar/NavigationBar";
 import Image from "next/image";
 import style from "./page.module.css";
 import React from "react";
 import { currentUser } from "@clerk/nextjs/server";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 import {
   SignedIn,
@@ -15,8 +15,7 @@ import {
   RedirectToUserProfile,
   UserButton,
 } from "@clerk/nextjs";
-function page() {
-  const navigate = useRouter();
+  // const navigate = useRouter();
   async function page() {
     const user = await currentUser();
     return (
@@ -95,7 +94,9 @@ function page() {
                 </div>
                 <i className="fa fa-chevron-right" aria-hidden="true"></i>
               </li>
-              <li onClick={() => navigate.push("/dashboard_bs")}>
+              <li
+                // onClick={() => navigate.push("/dashboard_bs")}
+              >
                 <div className={style.left}>
                   <i class="fas fa-dollar-sign    "></i>
                   <p>Become a seller</p>
@@ -146,6 +147,5 @@ function page() {
       </section>
     );
   }
-}
 
 export default page;
