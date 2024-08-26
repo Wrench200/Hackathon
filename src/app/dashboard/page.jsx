@@ -7,7 +7,14 @@ function page() {
   return (
     <section className={style.dashboard}>
       <div className={style.top}>
-        <i className="fa fa-chevron-left" aria-hidden="true"></i>
+        <div className={style.logo}>
+          <Image
+            src="/hackathon-logo.png"
+            alt="Logo"
+            width={200}
+            height={200}
+          />
+        </div>
         <i className="fas fa-gear  "></i>
       </div>
       <div className={style.info}>
@@ -44,6 +51,13 @@ function page() {
               <div className={style.left}>
                 <i className="fa fa-heart" aria-hidden="true"></i>
                 <p>My Favorites</p>
+              </div>
+              <i className="fa fa-chevron-right" aria-hidden="true"></i>
+            </li>
+            <li>
+              <div className={style.left}>
+                <i class="fas fa-dollar-sign    "></i>
+                <p>Become a seller</p>
               </div>
               <i className="fa fa-chevron-right" aria-hidden="true"></i>
             </li>

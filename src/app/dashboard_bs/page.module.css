@@ -1,0 +1,179 @@
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 0.5em 0;
+}
+
+.account {
+  width: 3em;
+  height: 3em;
+  /* background-color: black; */
+  border-radius: 50%;
+  overflow: hidden;
+}
+.account img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.dashboard {
+  padding: 1em;
+}
+.menu {
+  position: fixed;
+  background-color: white;
+  left: 0;
+  top: 0;
+  width: 90%;
+  height: 100vh;
+  transition: 0.3s;
+  transform: translateX(-1000px);
+  z-index: 10;
+}
+.dark {
+  background-color: rgba(0, 0, 0, 0.286);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 5;
+  width: 100vw;
+}
+.show {
+  transform: translateX(0);
+}
+.products {
+  margin: 1em 0;
+}
+.product {
+  display: flex;
+  margin: 1em 0;
+  flex-direction: column;
+  gap: 1em;
+}
+.line {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  background-color: white;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.059);
+  border-radius: 8px;
+  padding: 1em;
+}
+.line img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.left {
+  width: 15%;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.botInfo {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  justify-content: flex-end;
+  width: 100%;
+  /* background: #000; */
+}
+.right {
+  width: 100%;
+}
+.product h2 {
+  font-size: 15px;
+}
+.topInfo div {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.botInfo button {
+  padding: 0.5em;
+  width: 5em;
+  border: none;
+}
+.botInfo button:last-of-type {
+  background-color: rgb(174, 0, 0);
+  border-radius: 5px;
+  color: white;
+}
+.products h1 {
+  font-size: 18px;
+}
+.botInfo button:first-child {
+  background-color: rgb(4, 4, 42);
+  border-radius: 5px;
+  color: white;
+}
+.topMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1em;
+  padding-bottom: 0;
+}
+.topMenu i {
+  width: 2em;
+  height: 2em;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  display: grid;
+  place-content: center;
+}
+
+.back {
+  padding: 1em;
+}
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.logo {
+  width: 40%;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em 0;
+  height: 80%;
+}
+.menu ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 1em;
+  cursor: pointer;
+  /* background: #000; */
+}
+.active {
+  border-left: 8px solid black;
+  background-color: #f8f8f8;
+}
+.menu li p {
+  font-weight: 600;
+}
+
+.back {
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}

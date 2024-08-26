@@ -22,14 +22,20 @@
 }
 .top {
   display: flex;
-
+  align-items: center;
   justify-content: space-between;
 }
+
+.logo img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+.logo {
+  width: 50%;
+}
 .account {
-  width: 3em;
-  height: 3em;
-  /* background-color: black; */
-  border-radius: 50%;
+  scale: 1.5;
   overflow: hidden;
 }
 .account img {

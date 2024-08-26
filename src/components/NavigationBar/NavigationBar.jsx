@@ -63,7 +63,6 @@ function NavigationBar() {
           onClick={() => {
             setActiveNav("cart");
             setActiveLine(2);
-            gadea;
             navigate.push("/cart");
           }}
           className={activeNav == "cart" && style.active}
@@ -92,7 +91,9 @@ function NavigationBar() {
             setActiveLine(4);
           }}
           className={activeNav == "user" && style.active}
-        ></li>
+        >
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </li>
       </ul>
     </div>
   );
