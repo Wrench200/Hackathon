@@ -1,9 +1,12 @@
+"use client";
 import NavigationBar from "@/components/NavigationBar/NavigationBar";
 import Image from "next/image";
 import style from "./page.module.css";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 function page() {
+  const navigate = useRouter();
   return (
     <section className={style.dashboard}>
       <div className={style.top}>
@@ -40,13 +43,7 @@ function page() {
               </div>
               <i className="fa fa-chevron-right" aria-hidden="true"></i>
             </li>
-            <li>
-              <div className={style.left}>
-                <i className="fa fa-shopping-bag" aria-hidden="true"></i>
-                <p>My Order</p>
-              </div>
-              <i className="fa fa-chevron-right" aria-hidden="true"></i>
-            </li>
+
             <li>
               <div className={style.left}>
                 <i className="fa fa-heart" aria-hidden="true"></i>
@@ -54,7 +51,7 @@ function page() {
               </div>
               <i className="fa fa-chevron-right" aria-hidden="true"></i>
             </li>
-            <li>
+            <li onClick={() => navigate.push("/dashboard_bs")}>
               <div className={style.left}>
                 <i class="fas fa-dollar-sign    "></i>
                 <p>Become a seller</p>
