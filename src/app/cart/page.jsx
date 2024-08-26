@@ -67,6 +67,7 @@ function page() {
                     <i class="fa fa-trash" aria-hidden="true"></i>
                   </div>
                 </div>
+                
                 <div className={style.low}>
                   <h3>${item.price}</h3>
                   <div className={style.quantity}>
