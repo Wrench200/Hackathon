@@ -42,9 +42,7 @@ async function HomePage() {
             <SignedOut>
               <SignInButton />
             </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
+           
           </div>
         </div>
         <div className={style.bot}>
