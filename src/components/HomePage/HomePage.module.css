@@ -1,0 +1,118 @@
+.home {
+  /* background: #000; */
+  padding: 1em;
+  /* display: none; */
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.home::-webkit-scrollbar {
+  display: none;
+}
+.topNav {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.bot p {
+  font-size: 17px;
+  color: #6a6d75;
+  font-weight: 700;
+}
+.top {
+  display: flex;
+
+  justify-content: space-between;
+}
+.account {
+  width: 3em;
+  height: 3em;
+  /* background-color: black; */
+  border-radius: 50%;
+  overflow: hidden;
+}
+.account img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.searchBox {
+  background-color: #eee;
+  width: 80%;
+  border-radius: 30px;
+  position: relative;
+  margin: 1em 0;
+}
+.searchBox i {
+  font-size: 19px;
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.searchBox input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: inherit;
+  padding: 1em 2em;
+  padding-left: 3em;
+}
+.filter {
+  background-color: black;
+  color: white;
+  width: 3em;
+  height: 3em;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+}
+.filter svg {
+  stroke: white;
+  fill: white;
+}
+.discountSlide {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  width: 100vw;
+  padding-right: 3em;
+  overflow-x: scroll;
+}
+.bar {
+  display: flex;
+
+  justify-content: space-between;
+  padding: 1em 0;
+}
+.discount h1 {
+  font-size: 30px;
+}
+.discountSlide::-webkit-scrollbar {
+  display: none;
+}
+.discount {
+  white-space: nowrap;
+  /* min-width: 6em; */
+  /* height: 4em; */
+  padding: 1em;
+  border-radius: 8px;
+  background-color: #eee;
+  display: flex;
+  min-width: 17em;
+  flex-direction: column;
+  gap: 0.4em;
+}
+.discount button {
+  padding: 0.5em;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  width: fit-content;
+}
