@@ -3,11 +3,14 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import style from "./page.module.css";
 import { useRouter } from "next/navigation";
+import { log } from "aframe";
 
 function Page({ params }) {
-  const { id } = params;
+  const id  = params.id;
   const navigate = useRouter();
   const [products, setProducts] = useState([]);
+  console.log(products);
+  
   const [activeProduct, setActiveProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
