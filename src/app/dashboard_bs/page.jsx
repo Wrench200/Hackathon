@@ -7,8 +7,28 @@ import { toast } from "sonner";
 import { usePathname, useRouter } from "next/navigation";
 import { PHASE_PRODUCTION_SERVER } from "next/dist/shared/lib/constants";
 import { SignedIn, UserButton } from "@clerk/nextjs";
+import { useEffect } from "react";
 function Page() {
- 
+  const [products, setProducts] = useState([]);
+  const getProducts = async () => {
+  try {
+    const response = await fetch("/api/getall", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
+    if (!response.ok) {
+      throw new Error("Failed to fetch products");
+    }
+    const data = await response.json();
+    setProducts(data.data);
+  } catch (error) {
+    console.error("Error fetching products:", error);
+  }
+};
+
+useEffect(() => {
+  getProducts();
+}, []);
 
   const navigate = useRouter();
   const [showMenu, setShowMenu] = useState(false);
