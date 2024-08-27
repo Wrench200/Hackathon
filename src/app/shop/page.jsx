@@ -1,44 +1,30 @@
-"use client";
+
 import NavigationBar from "@/components/NavigationBar/NavigationBar";
 import React from "react";
 import Image from "next/image";
 import style from "./page.module.css";
-import { useRouter } from "next/navigation";
-function Page() {
-  const navigate = useRouter();
 
-  const products = [
-    {
-      id: 1,
-      name: "product",
-      price: 100,
-      image: "/blank-profile-picture-973460_640.png",
-    },
-    {
-      id: 2,
-      name: "product",
-      price: 100,
-      image: "/blank-profile-picture-973460_640.png",
-    },
-    {
-      id: 3,
-      name: "product",
-      price: 100,
-      image: "/blank-profile-picture-973460_640.png",
-    },
-    {
-      id: 4,
-      name: "product",
-      price: 100,
-      image: "/blank-profile-picture-973460_640.png",
-    },
-    {
-      id: 5,
-      name: "product",
-      price: 100,
-      image: "/blank-profile-picture-973460_640.png",
-    },
-  ];
+async function Page() {
+
+  try {
+    const res = await fetch("/api/getall", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const result = await res.json();
+
+    if (res.status === 200) {
+      toast.success("Product added successfully");
+      setActivePage("all");
+    } else if (res.status === 400) {
+      toast.error("Please check the information provided");
+    } else if (res.status === 500) {
+      toast.error("Server error, please try again later");
+    }
+  } catch (error) {
+    toast.error("An error occurred while adding the product");
+  } 
   return (
     <section className={style.fav}>
       <div className={style.search}>
