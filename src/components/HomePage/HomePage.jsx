@@ -9,20 +9,20 @@ import { currentUser } from "@clerk/nextjs/server";
 async function HomePage() {
   const discounts = [
     {
-      title: "50% Off",
-      description: "",
+      title: "50% Off ",
+      description: "on everything from the 12/8/2024",
       image:
         "https://t4.ftcdn.net/jpg/00/63/83/29/360_F_63832907_SA64nRfoIU8qaPKDkcYT7Ax2T0eVFJDY.webp",
     },
     {
       title: "70% Off",
-      description: "",
+      description: "on everything from the 7/9/2024",
       image:
         "https://t3.ftcdn.net/jpg/00/63/83/28/240_F_63832897_TbTCqtv2E8LaTt52Ofv5dQXqjfKvwvvF.jpg",
     },
     {
       title: "90% Off",
-      description: "",
+      description: "on everything from the 2/12/2024",
       image:
         "https://t3.ftcdn.net/jpg/00/63/83/28/240_F_63832891_P4jDfynIlkrEaVYZC2YKwAylAnx6AZhQ.jpg",
     },
@@ -126,7 +126,13 @@ async function HomePage() {
             className={style.discount}
           >
             <h3>{item.title}</h3>
-            <p>{item.description}</p>
+            <p
+              style={{
+                fontSize: "14px",
+              }}
+            >
+              {item.description}
+            </p>
 
             <button>Get now</button>
           </div>
@@ -167,6 +173,7 @@ async function HomePage() {
           <h3>Museums</h3>
           <p>View all</p>
         </div>
+
         <div className={style.discountSlide}>
           {mus.map((item) => (
             <div
