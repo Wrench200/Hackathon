@@ -61,9 +61,7 @@ function Page({ params }) {
         </div>
       </div>
 
-      {loading ? (
-        <p>Loading...</p>
-      ) : activeProduct ? (
+      {activeProduct ? (
         <div className={style.product}>
           <div className={style.image}>
             <Image
