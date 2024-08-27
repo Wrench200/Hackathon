@@ -151,7 +151,7 @@ async function HomePage() {
       </div>
       <div className={style.arrivals}>
         <div className={style.bar}>
-          <h3>Wonders</h3>
+          <h3>Museums</h3>
           <p>View all</p>
         </div>
         <div className={style.discountSlide}>
@@ -159,7 +159,7 @@ async function HomePage() {
             <div
               key={item.title}
               style={{
-                height:"15em",
+                height: "13em",
                 background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${item.image}')`,
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
@@ -167,7 +167,13 @@ async function HomePage() {
               }}
               className={style.discount}
             >
-              <h3>{item.title}</h3>
+              <h3
+                style={{
+                  width: "80%",
+                }}
+              >
+                {item.title}
+              </h3>
               <p>{item.description}</p>
               {/* <Image
               src={item.image}
