@@ -24,6 +24,40 @@ async function HomePage() {
       image: "",
     },
   ];
+  const arrivals = [
+    {
+      title: "50% Off",
+      description: "On everything today",
+      image: "",
+    },
+    {
+      title: "70% Off",
+      description: "On everything today",
+      image: "",
+    },
+    {
+      title: "90% Off",
+      description: "On everything today",
+      image: "",
+    },
+  ];
+  const mus = [
+    {
+      title: "50% Off",
+      description: "On everything today",
+      image: "",
+    },
+    {
+      title: "70% Off",
+      description: "On everything today",
+      image: "",
+    },
+    {
+      title: "90% Off",
+      description: "On everything today",
+      image: "",
+    },
+  ];
   const user = await currentUser();
   return (
     <section className={style.home}>
@@ -38,7 +72,6 @@ async function HomePage() {
             />
           </div>
           <div className={style.account}>
-           
             <SignedIn>
               <UserButton />
             </SignedIn>
@@ -89,6 +122,40 @@ async function HomePage() {
         <div className={style.bar}>
           <h3>New Arrivals</h3>
           <p>View all</p>
+        </div>
+        <div className={style.discountSlide}>
+          {arrivals.map((item) => (
+            <div key={item.title} className={style.discount}>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              {/* <Image
+              src={item.image}
+              width={200}
+              height={200}
+            /> */}
+              <button>Get now</button>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className={style.arrivals}>
+        <div className={style.bar}>
+          <h3>Our museums</h3>
+          <p>View all</p>
+        </div>
+        <div className={style.discountSlide}>
+          {mus.map((item) => (
+            <div key={item.title} className={style.discount}>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              {/* <Image
+              src={item.image}
+              width={200}
+              height={200}
+            /> */}
+              {/* <button>Get now</button> */}
+            </div>
+          ))}
         </div>
       </div>
     </section>
