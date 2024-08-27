@@ -9,13 +9,16 @@ function Page({ params }) {
   const id  = params.id;
   const navigate = useRouter();
   const [products, setProducts] = useState([]);
-  console.log(products);
   
   const [activeProduct, setActiveProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  console.log(products);
+  console.log(activeProduct);
+  
 
   const getProducts = async () => {
     try {
+      setLoading(true);
       const response = await fetch("/api/getall", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
