@@ -1,39 +1,30 @@
-"use client"
 import NavigationBar from "@/components/NavigationBar/NavigationBar";
 import React from "react";
 import Image from "next/image";
 import style from "./page.module.css";
-import { useRouter } from "next/navigation";
 function page() {
-  const navigate = useRouter();
-
   const products = [
     {
-      id: 1,
       name: "product",
       price: 100,
       image: "/blank-profile-picture-973460_640.png",
     },
     {
-      id: 2,
       name: "product",
       price: 100,
       image: "/blank-profile-picture-973460_640.png",
     },
     {
-      id: 3,
       name: "product",
       price: 100,
       image: "/blank-profile-picture-973460_640.png",
     },
     {
-      id: 4,
       name: "product",
       price: 100,
       image: "/blank-profile-picture-973460_640.png",
     },
     {
-      id: 5,
       name: "product",
       price: 100,
       image: "/blank-profile-picture-973460_640.png",
@@ -64,29 +55,24 @@ function page() {
         </div>
       </div>
       <div className={style.products}>
-        <h1>Our Shop</h1>
+      <h1>WishList</h1>
         <div className={style.product}>
           {products.map((item) => (
-            <div
-              className={style.box}
-              onClick={() => {
-                navigate.push(`${item.id}`);
-              }}
-            >
-              <div className={style.image}>
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  width={500}
-                  height={500}
-                />
-                <i class="fa fa-heart" aria-hidden="true"></i>
+            <div className={style.line}>
+              <div className={style.left}>
+                <Image alt="image" src={item.image} width={300} height={300} />
               </div>
-              <div className={style.bot}>
-                <h2>{item.name}</h2>
-                <p>Lorem ipsum dolor sit.</p>
-                <h3>${item.price}</h3>
-                {/* <button>Remove</button> */}
+              <div className={style.right}>
+                <div className={style.high}>
+                  <h1>{item.name}</h1>
+                </div>
+
+                <div className={style.low}>
+                  <h3>${item.price}</h3>
+                  <div className={style.add}>
+                    <button>Add to cart</button>
+                  </div>
+                </div>
               </div>
             </div>
           ))}

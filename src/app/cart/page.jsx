@@ -2,8 +2,10 @@
 import NavigationBar from "@/components/NavigationBar/NavigationBar";
 import React, { useState } from "react";
 import style from "./page.module.css";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 function page() {
+  const navigate = useRouter();
   const products = [
     {
       name: "product",
@@ -35,7 +37,12 @@ function page() {
   return (
     <section>
       <div className={style.top}>
-        <div className={style.logo}>
+        <div
+          className={style.logo}
+          onClick={() => {
+            navigate.push("/");
+          }}
+        >
           <Image
             src="/hackathon-logo.png"
             alt="Logo"
@@ -67,7 +74,7 @@ function page() {
                     <i class="fa fa-trash" aria-hidden="true"></i>
                   </div>
                 </div>
-                
+
                 <div className={style.low}>
                   <h3>${item.price}</h3>
                   <div className={style.quantity}>

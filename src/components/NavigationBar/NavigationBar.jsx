@@ -20,7 +20,7 @@ function NavigationBar() {
       case "/order":
         setActiveLine(2);
         break;
-      case "/favorite":
+      case "/favorites":
         setActiveLine(3);
         break;
       case "/dashboard":
@@ -71,16 +71,16 @@ function NavigationBar() {
           <p>Menu</p>
         </li>
         <li
-          title="favorite"
+          title="favorites"
           onClick={() => {
-            setActiveNav("favorite");
+            setActiveNav("favorites");
             setActiveLine(3);
-            navigate.push("/favorite");
+            navigate.push("/favorites");
           }}
-          className={activeNav == "favorite" && style.active}
+          className={activeNav == "favorites" && style.active}
         >
           <i className="fa fa-heart   "></i>
-          <p>favorite</p>
+          <p>favorites</p>
         </li>
         <li
           title="account"

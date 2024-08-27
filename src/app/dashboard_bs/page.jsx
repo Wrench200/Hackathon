@@ -3,12 +3,48 @@ import React, { useState } from "react";
 import style from "./page.module.css";
 import Image from "next/image";
 import { toast } from "sonner";
+import { usePathname, useRouter } from "next/navigation";
+
 function Page() {
+  const products = [
+    {
+      id: 1,
+      name: "product",
+      price: 100,
+      image: "/blank-profile-picture-973460_640.png",
+    },
+    {
+      id: 2,
+      name: "product",
+      price: 100,
+      image: "/blank-profile-picture-973460_640.png",
+    },
+    {
+      id: 3,
+      name: "product",
+      price: 100,
+      image: "/blank-profile-picture-973460_640.png",
+    },
+    {
+      id: 4,
+      name: "product",
+      price: 100,
+      image: "/blank-profile-picture-973460_640.png",
+    },
+    {
+      id: 5,
+      name: "product",
+      price: 100,
+      image: "/blank-profile-picture-973460_640.png",
+    },
+  ];
+
+  const navigate = useRouter();
   const [showMenu, setShowMenu] = useState(false);
   const [activePage, setActivePage] = useState("all");
   const [productName, setProductName] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState("");
   const [image, setImage] = useState(null);
   const [discount, setDiscount] = useState(false);
   const [discountPercentage, setDiscountPercentage] = useState(0);
@@ -23,7 +59,7 @@ function Page() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     setIsLoading(true);
 
     const postData = {
@@ -65,7 +101,12 @@ function Page() {
       <div className={`${style.menu} ${showMenu && style.show}`}>
         <div className={style.topMenu}>
           <div className={style.logo}>
-            <Image src="/hackathon-logo.png" alt="Logo" width={200} height={200} />
+            <Image
+              src="/hackathon-logo.png"
+              alt="Logo"
+              width={200}
+              height={200}
+            />
           </div>
           <i
             className="fa fa-times"
@@ -109,7 +150,7 @@ function Page() {
           <div
             className={style.back}
             onClick={() => {
-              navigate.push("");
+              navigate.push("/dashboard");
             }}
           >
             <i className="fa-solid fa-arrow-left"></i>
@@ -146,7 +187,37 @@ function Page() {
         <div className={style.products}>
           <h1>Lastly Updated Products</h1>
           <div className={style.product}>
-            {/* Render product list here */}
+            {" "}
+            {products.map((item) => (
+              <div className={style.line}>
+                <div className={style.left}>
+                  <Image
+                    alt="image"
+                    src={item.image}
+                    width={300}
+                    height={300}
+                  />
+                </div>
+                <div className={style.right}>
+                  <div className={style.topInfo}>
+                    <div>
+                      <h2>Title</h2>
+                      <h2>:</h2>
+                      <h2>{item.name}</h2>
+                    </div>
+                    <div>
+                      <p>Price</p>
+                      <p>:</p>
+                      <p>${item.price}</p>
+                    </div>
+                  </div>
+                  <div className={style.botInfo}>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       )}
@@ -189,7 +260,21 @@ function Page() {
                 required
               />
             </div>
-            <div className={style.formGroup}>
+            {image && (
+              <div>
+                <label>Preview:</label>
+                <div className={style.Pimage}>
+                  <Image
+                    src={image}
+                    alt="Preview"
+                    className={style.image}
+                    width={200}
+                    height={200}
+                  />
+                </div>
+              </div>
+            )}
+            <div className={style.formGroupD}>
               <label>Discount:</label>
               <input
                 type="checkbox"
