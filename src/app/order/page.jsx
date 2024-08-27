@@ -11,7 +11,7 @@ function Page() {
   return (
     <section>
       <div className={style.top}>
-        <div className={style.logo}>
+        <div className={style.logo} onClick={()=>navigate.push("/")}>
           <Image
             src="/hackathon-logo.png"
             alt="Logo"
@@ -19,12 +19,10 @@ function Page() {
             height={200}
           />
         </div>
-        <div className={style.account}>
-           
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </div>
+        <div className={style.cart}>
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <p>0</p>
+        </div>
       </div>
       <div className={style.orders}>
         <div className={style.topM}>
@@ -61,7 +59,7 @@ function Page() {
           </div>
         )}
       </div>
-      <NavigationBar />
+      {/* <NavigationBar /> */}
     </section>
   );
 }

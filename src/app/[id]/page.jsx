@@ -2,7 +2,9 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import style from "./page.module.css";
+import { useRouter } from "next/navigation";
 function page({ params }) {
+  const navigate = useRouter();
   const products = [
     {
       id: 1,
@@ -46,7 +48,11 @@ function page({ params }) {
   return (
     <section>
       <div className={style.topM}>
-        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        <i
+          onClick={() => navigate.back()}
+          class="fa fa-chevron-left"
+          aria-hidden="true"
+        ></i>
         <div
           className={style.cart}
           onClick={() => {
