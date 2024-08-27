@@ -140,7 +140,7 @@ async function HomePage() {
       </div>
       <div className={style.arrivals}>
         <div className={style.bar}>
-          <h3>New Arrivals</h3>
+          <h3>Landmarks</h3>
           <p>View all</p>
         </div>
         <div className={style.discountSlide}>
