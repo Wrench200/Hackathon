@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import style from "./page.module.css";
-function page({ params }) {
+function Page({ params }) {
   const products = [
     {
       id: 1,
@@ -61,7 +61,7 @@ function page({ params }) {
       {activeProduct && (
         <div className={style.product}>
           <div className={style.image}>
-            <Image src={activeProduct.image} width={1000} height={1000} />
+            <Image alt="" src={activeProduct.image} width={1000} height={1000} />
             <i className="fa fa-heart" aria-hidden="true"></i>
           </div>
           <div className={style.details}>
@@ -105,4 +105,4 @@ function page({ params }) {
   );
 }
 
-export default page;
+export default Page;

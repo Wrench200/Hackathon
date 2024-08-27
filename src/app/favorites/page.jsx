@@ -58,7 +58,7 @@ function page() {
       <h1>WishList</h1>
         <div className={style.product}>
           {products.map((item) => (
-            <div className={style.line}>
+            <div key={item.name} className={style.line}>
               <div className={style.left}>
                 <Image alt="image" src={item.image} width={300} height={300} />
               </div>
