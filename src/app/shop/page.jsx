@@ -1,11 +1,11 @@
 
 "use client"
 import NavigationBar from "@/components/NavigationBar/NavigationBar";
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./page.module.css";
 import { useRouter } from "next/navigation";
-
+import { useState } from "react";
+import { useEffect } from "react";
 function Page() {
   const router = useRouter();
   const [products, setProducts] = useState([]);
