@@ -167,6 +167,7 @@ async function HomePage() {
           <h3>Museums</h3>
           <p>View all</p>
         </div>
+        
         <div className={style.discountSlide}>
           {mus.map((item) => (
             <div
