@@ -77,7 +77,7 @@ function NavigationBar() {
             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             <h6>0</h6>
           </div>
-        </li>
+          </li>
         <li
           title="favorites"
           onClick={() => {
@@ -100,7 +100,7 @@ function NavigationBar() {
           }}
           className={activeNav == "user" && style.active}
         >
-          <i class="fa fa-user" aria-hidden="true"></i>
+          <i className="fa fa-user" aria-hidden="true"></i>
         </li>
       </ul>
     </div>

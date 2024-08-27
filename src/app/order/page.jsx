@@ -21,6 +21,7 @@ function Page() {
         </div>
         <div className={style.cart}>
           <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+
           <p>0</p>
         </div>
       </div>

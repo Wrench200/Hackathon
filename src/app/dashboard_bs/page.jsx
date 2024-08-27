@@ -162,7 +162,7 @@ function Page() {
                 navigate.push("");
               }}
             >
-              <i class="fa-solid fa-arrow-left"></i>
+              <i className="fa-solid fa-arrow-left"></i>
               <p>Back to Dashboard</p>
             </div>
           </div>
@@ -197,7 +197,7 @@ function Page() {
           <div className={style.product}>
             {" "}
             {products.map((item) => (
-              <div className={style.line}>
+              <div key={item.id} className={style.line}>
                 <div className={style.left}>
                   <Image
                     alt="image"

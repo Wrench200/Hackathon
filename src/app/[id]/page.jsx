@@ -59,15 +59,15 @@ function page({ params }) {
             navigate.push("/cart");
           }}
         >
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <i className="fa fa-shopping-cart" aria-hidden="true"></i>
           <p>0</p>
         </div>
       </div>
       {activeProduct && (
         <div className={style.product}>
           <div className={style.image}>
-            <Image src={activeProduct.image} width={1000} height={1000} />
-            <i class="fa fa-heart" aria-hidden="true"></i>
+            <Image alt="" src={activeProduct.image} width={1000} height={1000} />
+            <i className="fa fa-heart" aria-hidden="true"></i>
           </div>
           <div className={style.details}>
             <div className={style.top}>
@@ -99,7 +99,7 @@ function page({ params }) {
                 <h2>${activeProduct.price}</h2>
               </div>
               <button className={style.add}>
-                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i className="fa fa-shopping-bag" aria-hidden="true"></i>
                 <p>Add to cart</p>
               </button>
             </div>
@@ -110,4 +110,4 @@ function page({ params }) {
   );
 }
 
-export default page;
+export default Page;

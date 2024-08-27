@@ -58,6 +58,7 @@ function Page() {
           class="fa fa-tag"
           aria-hidden="true"
         ></i>
+        
       </div>
       <div className={style.orders}>
         <div className={style.topM}>
@@ -75,7 +76,7 @@ function Page() {
                 <div className={style.high}>
                   <h1>{item.name}</h1>
                   <div className="delete">
-                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    <i className="fa fa-trash" aria-hidden="true"></i>
                   </div>
                 </div>
 
