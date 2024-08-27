@@ -94,7 +94,7 @@ function Page({ params }) {
             <div className={style.bot}>
               <div className={style.price}>
                 <p>Total Price</p>
-                <h2>${activeProduct.price}</h2>
+                <h2>XAF{activeProduct.price}</h2>
               </div>
               <button className={style.add}>
                 <i className="fa fa-shopping-bag" aria-hidden="true"></i>
