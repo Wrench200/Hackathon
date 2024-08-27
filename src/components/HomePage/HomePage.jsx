@@ -46,19 +46,19 @@ async function HomePage() {
   ];
   const mus = [
     {
-      title: "50% Off",
+      title: "",
       description: "Museum of Civilizations of Cameroon",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Musee_des_civilisations%2C_Dschang%2C_Cameroon.jpg/260px-Musee_des_civilisations%2C_Dschang%2C_Cameroon.jpg",
     },
     {
-      title: "70% Off",
+      title: "",
       description: "The Water Museum",
       image:
         "https://routedeschefferies.com/wp-content/uploads/2022/11/8-MUSEOGRAPHIE-scaled.jpg",
     },
     {
-      title: "90% Off",
+      title: "",
       description: "Bapa Heritage Hut",
       image:
         "https://routedeschefferies.com/wp-content/uploads/2022/10/Chefferie-Bapa-par-Perez-aout-21-37-scaled.jpg",
@@ -159,8 +159,9 @@ async function HomePage() {
             <div
               key={item.title}
               style={{
+                height:"15em",
                 background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${item.image}')`,
-                backgroundSize: "contain",
+                backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "right",
               }}
