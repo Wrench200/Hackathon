@@ -156,7 +156,6 @@ function Page() {
               navigate.push("/dashboard");
             }}
           >
-            <i className="fa-solid fa-arrow-left"></i>
             <div
               className={style.back}
               onClick={() => {
