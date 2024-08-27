@@ -1,11 +1,10 @@
-
-"use client"
+"use client";
 import NavigationBar from "@/components/NavigationBar/NavigationBar";
 import Image from "next/image";
 import style from "./page.module.css";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+
 function Page() {
   const router = useRouter();
   const [products, setProducts] = useState([]);
@@ -13,7 +12,7 @@ function Page() {
   const getProducts = async () => {
     try {
       const response = await fetch("/api/getall", {
-        method: "POST",
+        method: "GET",
         headers: { "Content-Type": "application/json" },
       });
       if (!response.ok) {
@@ -31,7 +30,7 @@ function Page() {
   }, []);
 
   return (
-    <section className={style.fav}> 
+    <section className={style.fav}>
       <div className={style.search}>
         <div className={style.searchBox}>
           <input type="text" placeholder="Search" />
