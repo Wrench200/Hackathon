@@ -2,7 +2,7 @@ import dbConnect from "@/utils/dbConnect";
 import Product from "@/models/product";
 import { NextResponse } from "next/server";
 
-export const post = async (req) => {
+export const POST = async (req) => {
   try {
     const { id } = req.json();
     await dbConnect();
@@ -22,7 +22,7 @@ export const post = async (req) => {
       );
     }
     
-    const products = await product.find({});
+    const products = await Product.find({});
     if (!products) {
       return new NextResponse(JSON.stringify({ message: "No products" }), {
         status: 400,

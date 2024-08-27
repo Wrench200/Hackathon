@@ -1,44 +1,62 @@
 "use client";
 import NavigationBar from "@/components/NavigationBar/NavigationBar";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./page.module.css";
 import { useRouter } from "next/navigation";
 function Page() {
   const navigate = useRouter();
 
-  const products = [
-    {
-      id: 1,
-      name: "product",
-      price: 100,
-      image: "/blank-profile-picture-973460_640.png",
-    },
-    {
-      id: 2,
-      name: "product",
-      price: 100,
-      image: "/blank-profile-picture-973460_640.png",
-    },
-    {
-      id: 3,
-      name: "product",
-      price: 100,
-      image: "/blank-profile-picture-973460_640.png",
-    },
-    {
-      id: 4,
-      name: "product",
-      price: 100,
-      image: "/blank-profile-picture-973460_640.png",
-    },
-    {
-      id: 5,
-      name: "product",
-      price: 100,
-      image: "/blank-profile-picture-973460_640.png",
-    },
-  ];
+  // const products = [
+  //   {
+  //     id: 1,
+  //     name: "product",
+  //     price: 100,
+  //     image: "/blank-profile-picture-973460_640.png",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "product",
+  //     price: 100,
+  //     image: "/blank-profile-picture-973460_640.png",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "product",
+  //     price: 100,
+  //     image: "/blank-profile-picture-973460_640.png",
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "product",
+  //     price: 100,
+  //     image: "/blank-profile-picture-973460_640.png",
+  //   },
+  //   {
+  //     id: 5,
+  //     name: "product",
+  //     price: 100,
+  //     image: "/blank-profile-picture-973460_640.png",
+  //   },
+  // ];
+  const [products, setProducts] = useState([]);
+
+  const getProducts = async () => {
+    try {
+      const response = await fetch("/api/getall", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await response.json();
+      setProducts(data.data);
+      console.log(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getProducts();
+  }, []);
   return (
     <section className={style.fav}>
       <div className={style.search}>
@@ -71,7 +89,7 @@ function Page() {
               key={item.id}
               className={style.box}
               onClick={() => {
-                navigate.push(`${item.id}`);
+                navigate.push(`${item._id}`);
               }}
             >
               <div className={style.image}>
