@@ -123,3 +123,15 @@
   border-radius: 10px;
   width: fit-content;
 }
+.discountSlide {
+  color: white !important;
+  position: relative;
+}
+.discountSlide img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  left: 0;
+  top: 0;
+}

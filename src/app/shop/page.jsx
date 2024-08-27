@@ -31,7 +31,7 @@ function Page() {
   }, []);
 
   return (
-    <section className={style.fav}>
+    <section className={style.fav}> 
       <div className={style.search}>
         <div className={style.searchBox}>
           <input type="text" placeholder="Search" />
@@ -76,7 +76,7 @@ function Page() {
                 <div className={style.bot}>
                   <h2>{item.name}</h2>
                   <p>Lorem ipsum dolor sit.</p>
-                  <h3>${item.price}</h3>
+                  <h3>XAF{item.price}</h3>
                 </div>
               </div>
             ))

@@ -11,17 +11,20 @@ async function HomePage() {
     {
       title: "50% Off",
       description: "On everything today",
-      image: "",
+      image:
+        "https://t4.ftcdn.net/jpg/00/63/83/29/360_F_63832907_SA64nRfoIU8qaPKDkcYT7Ax2T0eVFJDY.webp",
     },
     {
       title: "70% Off",
       description: "On everything today",
-      image: "",
+      image:
+        "https://t3.ftcdn.net/jpg/00/63/83/28/240_F_63832897_TbTCqtv2E8LaTt52Ofv5dQXqjfKvwvvF.jpg",
     },
     {
       title: "90% Off",
       description: "On everything today",
-      image: "",
+      image:
+        "https://t3.ftcdn.net/jpg/00/63/83/28/240_F_63832891_P4jDfynIlkrEaVYZC2YKwAylAnx6AZhQ.jpg",
     },
   ];
   const arrivals = [
@@ -44,18 +47,21 @@ async function HomePage() {
   const mus = [
     {
       title: "50% Off",
-      description: "On everything today",
-      image: "",
+      description: "Museum of Civilizations of Cameroon",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Musee_des_civilisations%2C_Dschang%2C_Cameroon.jpg/260px-Musee_des_civilisations%2C_Dschang%2C_Cameroon.jpg",
     },
     {
       title: "70% Off",
-      description: "On everything today",
-      image: "",
+      description: "The Water Museum",
+      image:
+        "https://routedeschefferies.com/wp-content/uploads/2022/11/8-MUSEOGRAPHIE-scaled.jpg",
     },
     {
       title: "90% Off",
-      description: "On everything today",
-      image: "",
+      description: "Bapa Heritage Hut",
+      image:
+        "https://routedeschefferies.com/wp-content/uploads/2022/10/Chefferie-Bapa-par-Perez-aout-21-37-scaled.jpg",
     },
   ];
   const user = await currentUser();
@@ -106,14 +112,19 @@ async function HomePage() {
       </div>
       <div className={style.discountSlide}>
         {discounts.map((item) => (
-          <div key={item.title} className={style.discount}>
+          <div
+            key={item.title}
+            style={{
+              background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${item.image}')`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "right",
+            }}
+            className={style.discount}
+          >
             <h3>{item.title}</h3>
             <p>{item.description}</p>
-            {/* <Image
-              src={item.image}
-              width={200}
-              height={200}
-            /> */}
+
             <button>Get now</button>
           </div>
         ))}
@@ -140,12 +151,21 @@ async function HomePage() {
       </div>
       <div className={style.arrivals}>
         <div className={style.bar}>
-          <h3>Our museums</h3>
+          <h3>Wonders</h3>
           <p>View all</p>
         </div>
         <div className={style.discountSlide}>
           {mus.map((item) => (
-            <div key={item.title} className={style.discount}>
+            <div
+              key={item.title}
+              style={{
+                background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${item.image}')`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "right",
+              }}
+              className={style.discount}
+            >
               <h3>{item.title}</h3>
               <p>{item.description}</p>
               {/* <Image
