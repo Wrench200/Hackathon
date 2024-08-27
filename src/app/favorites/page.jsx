@@ -2,7 +2,7 @@ import NavigationBar from "@/components/NavigationBar/NavigationBar";
 import React from "react";
 import Image from "next/image";
 import style from "./page.module.css";
-function page() {
+function Page() {
   const products = [
     {
       name: "product",
@@ -83,4 +83,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

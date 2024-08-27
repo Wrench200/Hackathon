@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import style from "./page.module.css";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 function Page() {
   const navigate = useRouter();
   const [activePage, setActivePage] = useState("ongoing");
@@ -18,15 +19,12 @@ function Page() {
             height={200}
           />
         </div>
-        <div
-          className={style.cart}
-          onClick={() => {
-            navigate.push("/cart");
-          }}
-        >
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-          <p>0</p>
-        </div>
+        <div className={style.account}>
+           
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </div>
       </div>
       <div className={style.orders}>
         <div className={style.topM}>

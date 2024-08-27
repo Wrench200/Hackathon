@@ -67,8 +67,16 @@ function NavigationBar() {
           }}
           className={activeNav == "order" && style.active}
         >
-          <i class="fa fa-tag" aria-hidden="true"></i>
-          <p>Menu</p>
+          {" "}
+          <div
+            className={style.cart}
+            onClick={() => {
+              navigate.push("/cart");
+            }}
+          >
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <h6>0</h6>
+          </div>
         </li>
         <li
           title="favorites"

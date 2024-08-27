@@ -43,7 +43,6 @@ function page({ params }) {
     console.log(foundProduct);
     setActiveProduct(foundProduct);
   }, [id]);
-
   return (
     <section>
       <div className={style.topM}>
