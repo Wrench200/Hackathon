@@ -11,6 +11,9 @@
 .account {
   width: 3em;
   height: 3em;
+  display: grid;
+  place-content: center;
+  place-items: center;
   /* background-color: black; */
   border-radius: 50%;
   overflow: hidden;

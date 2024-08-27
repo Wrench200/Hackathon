@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import style from "./page.module.css";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-function page() {
-  const navigate = useRouter();
+const navigate = useRouter();
+function Page() {
   const products = [
     {
       name: "product",
@@ -63,7 +63,7 @@ function page() {
       <div className={style.products}>
         <div className={style.product}>
           {products.map((item) => (
-            <div className={style.line}>
+            <div key={item.name} className={style.line}>
               <div className={style.left}>
                 <Image alt="image" src={item.image} width={300} height={300} />
               </div>
@@ -101,4 +101,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

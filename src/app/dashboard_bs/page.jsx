@@ -1,10 +1,12 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import React, { useState } from "react";
 import style from "./page.module.css";
 import Image from "next/image";
 import { toast } from "sonner";
 import { usePathname, useRouter } from "next/navigation";
-
+import { PHASE_PRODUCTION_SERVER } from "next/dist/shared/lib/constants";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 function Page() {
   const products = [
     {
@@ -41,13 +43,14 @@ function Page() {
 
   const navigate = useRouter();
   const [showMenu, setShowMenu] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [activePage, setActivePage] = useState("all");
   const [productName, setProductName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState(null);
   const [discount, setDiscount] = useState(false);
-  const [discountPercentage, setDiscountPercentage] = useState(0);
+  const [percentage, setpercentage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleImageUpload = (e) => {
@@ -68,7 +71,7 @@ function Page() {
       price,
       image,
       discount,
-      discountPercentage,
+      percentage,
     };
 
     try {
@@ -154,7 +157,15 @@ function Page() {
             }}
           >
             <i className="fa-solid fa-arrow-left"></i>
-            <p>Back to Dashboard</p>
+            <div
+              className={style.back}
+              onClick={() => {
+                navigate.push("");
+              }}
+            >
+              <i class="fa-solid fa-arrow-left"></i>
+              <p>Back to Dashboard</p>
+            </div>
           </div>
         </div>
       </div>
@@ -175,14 +186,12 @@ function Page() {
           </svg>
         </label>
         <div className={style.account}>
-          <Image
-            alt="image"
-            src={"/blank-profile-picture-973460_640.png"}
-            width={3000}
-            height={3000}
-          />
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
       </div>
+
       {activePage === "all" && (
         <div className={style.products}>
           <h1>Lastly Updated Products</h1>
@@ -289,12 +298,10 @@ function Page() {
                   type="range"
                   min="0"
                   max="100"
-                  value={discountPercentage}
-                  onChange={(e) =>
-                    setDiscountPercentage(Number(e.target.value))
-                  }
+                  value={percentage}
+                  onChange={(e) => setpercentage(Number(e.target.value))}
                 />
-                <span>{discountPercentage}%</span>
+                <span>{percentage}%</span>
               </div>
             )}
             <button type="submit" disabled={isLoading}>
