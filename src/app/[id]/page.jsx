@@ -14,15 +14,16 @@ function Page({ params }) {
   const getProducts = async () => {
     try {
       const response = await fetch("/api/getall", {
-        method: "POST",
+        method: "GET",
         headers: { "Content-Type": "application/json" },
       });
+      if (!response.ok) {
+        throw new Error("Failed to fetch products");
+      }
       const data = await response.json();
       setProducts(data.data);
     } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
+      console.error("Error fetching products:", error);
     }
   };
 

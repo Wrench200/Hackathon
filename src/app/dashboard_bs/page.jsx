@@ -11,24 +11,24 @@ import { useEffect } from "react";
 function Page() {
   const [products, setProducts] = useState([]);
   const getProducts = async () => {
-  try {
-    const response = await fetch("/api/getall", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-    });
-    if (!response.ok) {
-      throw new Error("Failed to fetch products");
+    try {
+      const response = await fetch("/api/getall", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+      if (!response.ok) {
+        throw new Error("Failed to fetch products");
+      }
+      const data = await response.json();
+      setProducts(data.data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
     }
-    const data = await response.json();
-    setProducts(data.data);
-  } catch (error) {
-    console.error("Error fetching products:", error);
-  }
-};
+  };
 
-useEffect(() => {
-  getProducts();
-}, []);
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   const navigate = useRouter();
   const [showMenu, setShowMenu] = useState(false);
@@ -205,7 +205,7 @@ useEffect(() => {
                     <div>
                       <p>Price</p>
                       <p>:</p>
-                      <p>${item.price}</p>
+                      <p>XAF{item.price}</p>
                     </div>
                   </div>
                   <div className={style.botInfo}>

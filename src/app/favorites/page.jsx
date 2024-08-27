@@ -55,7 +55,7 @@ function Page() {
         </div>
       </div>
       <div className={style.products}>
-      <h1>WishList</h1>
+        <h1>WishList</h1>
         <div className={style.product}>
           {products.map((item) => (
             <div key={item.name} className={style.line}>
@@ -68,7 +68,7 @@ function Page() {
                 </div>
 
                 <div className={style.low}>
-                  <h3>${item.price}</h3>
+                  <h3>XAF{item.price}</h3>
                   <div className={style.add}>
                     <button>Add to cart</button>
                   </div>

@@ -58,7 +58,6 @@ function Page() {
           class="fa fa-tag"
           aria-hidden="true"
         ></i>
-        
       </div>
       <div className={style.orders}>
         <div className={style.topM}>
@@ -81,7 +80,7 @@ function Page() {
                 </div>
 
                 <div className={style.low}>
-                  <h3>${item.price}</h3>
+                  <h3>XAF{item.price}</h3>
                   <div className={style.quantity}>
                     <p>-</p>
                     <p>{"0"}</p>

@@ -74,7 +74,7 @@ function Page() {
                 </div>
                 <div className={style.bot}>
                   <h2>{item.name}</h2>
-                  <p>Lorem ipsum dolor sit.</p>
+                  <p>{item.description}</p>
                   <h3>XAF{item.price}</h3>
                 </div>
               </div>
