@@ -24,6 +24,7 @@ export const POST = async (req) => {
     
     const products = await Product.find({});
     if (!products) {
+      console.log('ok')
       return new NextResponse(JSON.stringify({ message: "No products" }), {
         status: 400,
       });

@@ -4,41 +4,9 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./page.module.css";
 import { useRouter } from "next/navigation";
-function Page() {
-  const navigate = useRouter();
 
-  // const products = [
-  //   {
-  //     id: 1,
-  //     name: "product",
-  //     price: 100,
-  //     image: "/blank-profile-picture-973460_640.png",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "product",
-  //     price: 100,
-  //     image: "/blank-profile-picture-973460_640.png",
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "product",
-  //     price: 100,
-  //     image: "/blank-profile-picture-973460_640.png",
-  //   },
-  //   {
-  //     id: 4,
-  //     name: "product",
-  //     price: 100,
-  //     image: "/blank-profile-picture-973460_640.png",
-  //   },
-  //   {
-  //     id: 5,
-  //     name: "product",
-  //     price: 100,
-  //     image: "/blank-profile-picture-973460_640.png",
-  //   },
-  // ];
+function Page() {
+  const router = useRouter();
   const [products, setProducts] = useState([]);
 
   const getProducts = async () => {
@@ -47,16 +15,20 @@ function Page() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       });
+      if (!response.ok) {
+        throw new Error("Failed to fetch products");
+      }
       const data = await response.json();
       setProducts(data.data);
-      console.log(data.data);
     } catch (error) {
-      console.log(error);
+      console.error("Error fetching products:", error);
     }
   };
+
   useEffect(() => {
     getProducts();
   }, []);
+
   return (
     <section className={style.fav}>
       <div className={style.search}>
@@ -76,7 +48,7 @@ function Page() {
               fill="#000"
               fillRule="evenodd"
               d="M20 5h-1.17a3.001 3.001 0 0 0-5.66 0H4a1 1 0 0 0 0 2h9.17a3.001 3.001 0 0 0 5.66 0H20a1 1 0 1 0 0-2zm-4 2a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM3 12a1 1 0 0 1 1-1h1.17a3.001 3.001 0 0 1 5.66 0H20a1 1 0 1 1 0 2h-9.17a3.001 3.001 0 0 1-5.66 0H4a1 1 0 0 1-1-1zm5 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-4 4a1 1 0 1 0 0 2h9.17a3.001 3.001 0 0 0 5.66 0H20a1 1 0 1 0 0-2h-1.17a3.001 3.001 0 0 0-5.66 0H4zm13 1a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>{" "}
         </div>
@@ -84,31 +56,32 @@ function Page() {
       <div className={style.products}>
         <h1>Our Shop</h1>
         <div className={style.product}>
-          {products.map((item) => (
-            <div
-              key={item.id}
-              className={style.box}
-              onClick={() => {
-                navigate.push(`${item._id}`);
-              }}
-            >
-              <div className={style.image}>
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  width={500}
-                  height={500}
-                />
-                <i className="fa fa-heart" aria-hidden="true"></i>
+          {products.length > 0 ? (
+            products.map((item) => (
+              <div
+                key={item._id}
+                className={style.box}
+                onClick={() => router.push(`/${item._id}`)}
+              >
+                <div className={style.image}>
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={500}
+                    height={500}
+                  />
+                  <i className="fa fa-heart" aria-hidden="true"></i>
+                </div>
+                <div className={style.bot}>
+                  <h2>{item.name}</h2>
+                  <p>Lorem ipsum dolor sit.</p>
+                  <h3>${item.price}</h3>
+                </div>
               </div>
-              <div className={style.bot}>
-                <h2>{item.name}</h2>
-                <p>Lorem ipsum dolor sit.</p>
-                <h3>${item.price}</h3>
-                {/* <button>Remove</button> */}
-              </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p>No products available</p>
+          )}
         </div>
       </div>
       <NavigationBar />

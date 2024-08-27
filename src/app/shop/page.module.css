@@ -56,7 +56,13 @@
 
 .products {
   margin: 1em 0;
+  padding-bottom: 7em;
+  overflow-y: scroll;
+
   padding: 1em;
+}
+.products::-webkit-scrollbar{
+  display: none;
 }
 .product {
   display: grid;
