@@ -67,7 +67,7 @@ function NavigationBar() {
           }}
           className={activeNav == "order" && style.active}
         >
-          <i class="fa fa-tag" aria-hidden="true"></i>
+          <i className="fa fa-tag" aria-hidden="true"></i>
           <p>Menu</p>
         </li>
         <li
@@ -92,7 +92,7 @@ function NavigationBar() {
           }}
           className={activeNav == "user" && style.active}
         >
-          <i class="fa fa-user" aria-hidden="true"></i>
+          <i className="fa fa-user" aria-hidden="true"></i>
         </li>
       </ul>
     </div>

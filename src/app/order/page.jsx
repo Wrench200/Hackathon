@@ -24,7 +24,7 @@ function Page() {
             navigate.push("/cart");
           }}
         >
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <i className="fa fa-shopping-cart" aria-hidden="true"></i>
           <p>0</p>
         </div>
       </div>

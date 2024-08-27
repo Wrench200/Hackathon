@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import style from "./page.module.css";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-const navigate = useRouter();
+
 function Page() {
   const products = [
     {
@@ -51,7 +51,7 @@ function Page() {
           />
         </div>
         <div className={style.cart}>
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <i className="fa fa-shopping-cart" aria-hidden="true"></i>
           <p>0</p>
         </div>
       </div>
@@ -71,7 +71,7 @@ function Page() {
                 <div className={style.high}>
                   <h1>{item.name}</h1>
                   <div className="delete">
-                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    <i className="fa fa-trash" aria-hidden="true"></i>
                   </div>
                 </div>
 

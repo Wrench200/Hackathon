@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import NavigationBar from "@/components/NavigationBar/NavigationBar";
 import React from "react";
 import Image from "next/image";
 import style from "./page.module.css";
 import { useRouter } from "next/navigation";
-function page() {
+function Page() {
   const navigate = useRouter();
 
   const products = [
@@ -68,6 +68,7 @@ function page() {
         <div className={style.product}>
           {products.map((item) => (
             <div
+              key={item.id}
               className={style.box}
               onClick={() => {
                 navigate.push(`${item.id}`);
@@ -80,7 +81,7 @@ function page() {
                   width={500}
                   height={500}
                 />
-                <i class="fa fa-heart" aria-hidden="true"></i>
+                <i className="fa fa-heart" aria-hidden="true"></i>
               </div>
               <div className={style.bot}>
                 <h2>{item.name}</h2>
@@ -97,4 +98,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
