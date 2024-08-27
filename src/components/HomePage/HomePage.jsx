@@ -10,38 +10,41 @@ async function HomePage() {
   const discounts = [
     {
       title: "50% Off",
-      description: "On everything today",
+      description: "",
       image:
         "https://t4.ftcdn.net/jpg/00/63/83/29/360_F_63832907_SA64nRfoIU8qaPKDkcYT7Ax2T0eVFJDY.webp",
     },
     {
       title: "70% Off",
-      description: "On everything today",
+      description: "",
       image:
         "https://t3.ftcdn.net/jpg/00/63/83/28/240_F_63832897_TbTCqtv2E8LaTt52Ofv5dQXqjfKvwvvF.jpg",
     },
     {
       title: "90% Off",
-      description: "On everything today",
+      description: "",
       image:
         "https://t3.ftcdn.net/jpg/00/63/83/28/240_F_63832891_P4jDfynIlkrEaVYZC2YKwAylAnx6AZhQ.jpg",
     },
   ];
   const arrivals = [
     {
-      title: "50% Off",
-      description: "On everything today",
-      image: "",
+      title: "",
+      description: "",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ50k22eHmJ4eBQHZYkoViBzMk1V-AQSfEazg&s",
     },
     {
-      title: "70% Off",
-      description: "On everything today",
-      image: "",
+      title: "",
+      description: "",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS40tVGjHL7yb_siiFD_l-42oLUCBLIK_B3kg&s",
     },
     {
-      title: "90% Off",
-      description: "On everything today",
-      image: "",
+      title: "",
+      description: "",
+      image:
+        "https://cameroonadventuresandtours.com/wp-content/uploads/2020/04/monument-de-la-reunification1-500x248.jpeg",
     },
   ];
   const mus = [
@@ -136,7 +139,17 @@ async function HomePage() {
         </div>
         <div className={style.discountSlide}>
           {arrivals.map((item) => (
-            <div key={item.title} className={style.discount}>
+            <div
+              key={item.title}
+              style={{
+                height: "10em",
+                background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${item.image}')`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "right",
+              }}
+              className={style.discount}
+            >
               <h3>{item.title}</h3>
               <p>{item.description}</p>
               {/* <Image
@@ -144,7 +157,7 @@ async function HomePage() {
               width={200}
               height={200}
             /> */}
-              <button>Get now</button>
+              {/* <button>Get now</button> */}
             </div>
           ))}
         </div>
@@ -167,14 +180,15 @@ async function HomePage() {
               }}
               className={style.discount}
             >
-              <h3
+              <h3>{item.title}</h3>
+              <p
                 style={{
-                  width: "80%",
+                  maxWidth: "80%",
+                  whiteSpace: "wrap",
                 }}
               >
-                {item.title}
-              </h3>
-              <p>{item.description}</p>
+                {item.description}
+              </p>
               {/* <Image
               src={item.image}
               width={200}
