@@ -1,9 +1,8 @@
 
 import NavigationBar from "@/components/NavigationBar/NavigationBar";
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./page.module.css";
-
+import { toast } from "sonner";
 async function Page() {
 
   try {

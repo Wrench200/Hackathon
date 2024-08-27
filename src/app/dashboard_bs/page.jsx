@@ -8,38 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { PHASE_PRODUCTION_SERVER } from "next/dist/shared/lib/constants";
 import { SignedIn, UserButton } from "@clerk/nextjs";
 function Page() {
-  const products = [
-    {
-      id: 1,
-      name: "product",
-      price: 100,
-      image: "/blank-profile-picture-973460_640.png",
-    },
-    {
-      id: 2,
-      name: "product",
-      price: 100,
-      image: "/blank-profile-picture-973460_640.png",
-    },
-    {
-      id: 3,
-      name: "product",
-      price: 100,
-      image: "/blank-profile-picture-973460_640.png",
-    },
-    {
-      id: 4,
-      name: "product",
-      price: 100,
-      image: "/blank-profile-picture-973460_640.png",
-    },
-    {
-      id: 5,
-      name: "product",
-      price: 100,
-      image: "/blank-profile-picture-973460_640.png",
-    },
-  ];
+ 
 
   const navigate = useRouter();
   const [showMenu, setShowMenu] = useState(false);
