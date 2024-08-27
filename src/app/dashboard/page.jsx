@@ -13,8 +13,9 @@ import {
   RedirectToUserProfile,
 } from "@clerk/nextjs";
 import Link from "next/link";
+
 // eslint-disable-next-line react-hooks/rules-of-hooks
-async function page() {
+async function Page() {
   const user = await currentUser();
   return (
     <section className={style.dashboard}>
@@ -111,4 +112,4 @@ async function page() {
   );
 }
 
-export default page;
+export default Page;

@@ -7,8 +7,8 @@ function NavigationBar() {
   const [activeNav, setActiveNav] = useState("home");
   const [activeLine, setActiveLine] = useState(null);
   const path = usePathname();
-  const navigate = useRouter();
   console.log(path);
+  const navigate = useRouter();
   useEffect(() => {
     switch (path) {
       case "/":
@@ -17,7 +17,7 @@ function NavigationBar() {
       case "/shop":
         setActiveLine(1);
         break;
-      case "/order":
+      case "/cart":
         setActiveLine(2);
         break;
       case "/favorites":
@@ -61,15 +61,23 @@ function NavigationBar() {
         </li>
         <li
           onClick={() => {
-            setActiveNav("order");
+            setActiveNav("cart");
             setActiveLine(2);
-            navigate.push("/order");
+            navigate.push("/cart");
           }}
-          className={activeNav == "order" && style.active}
+          className={activeNav == "cart" && style.active}
         >
-          <i className="fa fa-tag" aria-hidden="true"></i>
-          <p>Menu</p>
-        </li>
+          {" "}
+          <div
+            className={style.cart}
+            onClick={() => {
+              navigate.push("/cart");
+            }}
+          >
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <h6>0</h6>
+          </div>
+          </li>
         <li
           title="favorites"
           onClick={() => {

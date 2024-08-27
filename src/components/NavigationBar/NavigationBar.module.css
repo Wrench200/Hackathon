@@ -70,3 +70,21 @@
 .items li {
   /* width: 100%; */
 }
+.cart {
+  cursor: pointer;
+  position: relative;
+  /* width: 2em; */
+  /* height: 2em; */
+}
+.cart h6{
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  top: 0px;
+  right: 10px;
+  background-color: red;
+}

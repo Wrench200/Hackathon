@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import style from "./page.module.css";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-
 function Page() {
+  const navigate = useRouter();
   const products = [
     {
       name: "product",
@@ -50,10 +50,15 @@ function Page() {
             height={200}
           />
         </div>
-        <div className={style.cart}>
-          <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-          <p>0</p>
-        </div>
+        <i
+          onClick={() => navigate.push("/order")}
+          style={{
+            cursor: "pointer",
+          }}
+          class="fa fa-tag"
+          aria-hidden="true"
+        ></i>
+        
       </div>
       <div className={style.orders}>
         <div className={style.topM}>

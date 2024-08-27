@@ -1,6 +1,6 @@
 
 import NavigationBar from "@/components/NavigationBar/NavigationBar";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./page.module.css";
 
@@ -57,7 +57,7 @@ async function Page() {
               key={item.id}
               className={style.box}
               onClick={() => {
-                navigate.push(`${item.id}`);
+                navigate.push(`${item._id}`);
               }}
             >
               <div className={style.image}>

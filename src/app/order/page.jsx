@@ -4,13 +4,14 @@ import React, { useState } from "react";
 import style from "./page.module.css";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 function Page() {
   const navigate = useRouter();
   const [activePage, setActivePage] = useState("ongoing");
   return (
     <section>
       <div className={style.top}>
-        <div className={style.logo}>
+        <div className={style.logo} onClick={()=>navigate.push("/")}>
           <Image
             src="/hackathon-logo.png"
             alt="Logo"
@@ -18,13 +19,9 @@ function Page() {
             height={200}
           />
         </div>
-        <div
-          className={style.cart}
-          onClick={() => {
-            navigate.push("/cart");
-          }}
-        >
-          <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+        <div className={style.cart}>
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+
           <p>0</p>
         </div>
       </div>
@@ -63,7 +60,7 @@ function Page() {
           </div>
         )}
       </div>
-      <NavigationBar />
+      {/* <NavigationBar /> */}
     </section>
   );
 }
