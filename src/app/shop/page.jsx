@@ -1,9 +1,9 @@
 
+"use client"
 import NavigationBar from "@/components/NavigationBar/NavigationBar";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import style from "./page.module.css";
-<<<<<<< HEAD
 import { useRouter } from "next/navigation";
 
 function Page() {
@@ -30,30 +30,6 @@ function Page() {
     getProducts();
   }, []);
 
-=======
-
-async function Page() {
-
-  try {
-    const res = await fetch("/api/getall", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
-
-    const result = await res.json();
-
-    if (res.status === 200) {
-      toast.success("Product added successfully");
-      setActivePage("all");
-    } else if (res.status === 400) {
-      toast.error("Please check the information provided");
-    } else if (res.status === 500) {
-      toast.error("Server error, please try again later");
-    }
-  } catch (error) {
-    toast.error("An error occurred while adding the product");
-  } 
->>>>>>> e77ebcb3d57a490f07f4be3fde1956e641f84d72
   return (
     <section className={style.fav}>
       <div className={style.search}>
